@@ -1,0 +1,246 @@
+export default function PortfolioMockup() {
+  const projects = [
+    {
+      id: "settlement-in-motion",
+      title: "Settlement in Motion",
+      year: "2025",
+      category: "Graduation Project / Housing",
+      description:
+        "A housing proposal that reconsiders urban dwelling through the lens of motion, based on an analysis of extensions and alterations in the former Asagaya Housing complex.",
+      highlight:
+        "Comparative analytical drawings of alterations in the former Asagaya Housing complex.",
+    },
+    {
+      id: "summer-stage-apparatus",
+      title: "夏の舞台装置 / Summer Stage Apparatus",
+      year: "2024",
+      category: "Academic Project / Housing",
+      description:
+        "A proposal that translates the suspended condition of having no fixed place to return to into a dwelling where uses, episodes, and atmospheres can be continually rearranged.",
+      highlight:
+        "Site sketches of traces and remnants, together with architectural drawings.",
+    },
+    {
+      id: "intermedia-school",
+      title: "インターメディアスクール / Intermedia School",
+      year: "2025",
+      category: "Academic Project / Educational Complex",
+      description:
+        "A graduate school proposal for four departments, where form and program can connect and separate flexibly, with thresholds articulated through the density of columns.",
+      highlight:
+        "Architectural drawings showing the spatial threshold created by column density.",
+    },
+  ];
+
+  const cvItems = [
+    "2025–  Waseda University Graduate School, Architecture",
+    "2025  Waseda Art and Architecture School, Department of Architecture and Urban Design",
+    "2023  Tokyo University of the Arts, Department of Intermedia Art",
+  ];
+
+  const newsItems = [
+    "2025  Graduation Project: Settlement in Motion",
+    "2025  Academic Project: Intermedia School",
+    "2024  Academic Project: Summer Stage Apparatus",
+  ];
+
+  return (
+    <div className="min-h-screen bg-white text-neutral-900">
+      <div className="mx-auto max-w-7xl px-6 py-8 md:px-10 md:py-10">
+        <header className="mb-20 flex flex-col gap-10 border-b border-neutral-200 pb-6 md:flex-row md:items-start md:justify-between">
+          <div className="max-w-xl">
+            <p className="mb-3 text-[11px] uppercase tracking-[0.22em] text-neutral-500">
+              Architecture Portfolio
+            </p>
+            <h1 className="text-3xl font-normal tracking-tight md:text-5xl">
+              Risei On
+            </h1>
+          </div>
+
+          <nav className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm md:grid-cols-3 md:text-[15px]">
+            <a href="#works" className="hover:opacity-50">Works</a>
+            <a href="#about" className="hover:opacity-50">About</a>
+            <a href="#cv" className="hover:opacity-50">CV</a>
+            <a href="#news" className="hover:opacity-50">News</a>
+            <a href="#contact" className="hover:opacity-50">Contact</a>
+            <a href="#pdf" className="hover:opacity-50">PDF</a>
+          </nav>
+        </header>
+
+        <section className="mb-24 grid gap-10 md:grid-cols-12 md:items-end">
+          <div className="md:col-span-7">
+            <p className="max-w-2xl text-lg leading-8 text-neutral-700 md:text-2xl md:leading-10">
+              A minimal web portfolio focused on drawings, models, and texts.
+              Designed for architectural offices and general viewers, with a calm
+              white layout and generous margins.
+            </p>
+          </div>
+          <div className="md:col-span-5 md:pl-8">
+            <div className="space-y-2 border-l border-neutral-200 pl-4 text-sm text-neutral-500">
+              <p>Japanese / English</p>
+              <p>Image and text based</p>
+              <p>Mobile responsive</p>
+              <p>Simple, no heavy motion</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="works" className="mb-24">
+          <div className="mb-10 flex items-end justify-between border-b border-neutral-200 pb-3">
+            <h2 className="text-xl md:text-2xl">Selected Works</h2>
+            <p className="text-xs uppercase tracking-[0.18em] text-neutral-400">
+              2024–2025
+            </p>
+          </div>
+
+          <div className="space-y-20">
+            {projects.map((project, index) => (
+              <article key={project.id} className="grid gap-8 md:grid-cols-12">
+                <div className="md:col-span-7">
+                  <div className="aspect-[4/3] w-full border border-neutral-200 bg-neutral-50">
+                    <div className="flex h-full items-center justify-center text-sm text-neutral-400">
+                      Project Image {String(index + 1).padStart(2, "0")}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="md:col-span-5 md:pt-2">
+                  <div className="mb-3 flex items-baseline justify-between gap-4 border-b border-neutral-200 pb-3">
+                    <h3 className="text-xl font-normal md:text-2xl">{project.title}</h3>
+                    <span className="text-sm text-neutral-400">{project.year}</span>
+                  </div>
+
+                  <p className="mb-4 text-sm uppercase tracking-[0.16em] text-neutral-400">
+                    {project.category}
+                  </p>
+
+                  <p className="mb-6 text-[15px] leading-7 text-neutral-700">
+                    {project.description}
+                  </p>
+
+                  <div className="mb-8 border-l border-neutral-200 pl-4">
+                    <p className="text-sm leading-7 text-neutral-600">
+                      <span className="text-neutral-400">Highlight — </span>
+                      {project.highlight}
+                    </p>
+                  </div>
+
+                  <div className="flex gap-6 text-sm">
+                    <a href={`#${project.id}`} className="underline underline-offset-4 hover:opacity-50">
+                      View project
+                    </a>
+                    <a href="#pdf" className="underline underline-offset-4 hover:opacity-50">
+                      Download PDF
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-24 grid gap-16 border-t border-neutral-200 pt-8 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <p className="text-xs uppercase tracking-[0.2em] text-neutral-400">
+              Project page preview
+            </p>
+          </div>
+
+          <div className="md:col-span-8" id="settlement-in-motion">
+            <h2 className="mb-2 text-2xl md:text-4xl">Settlement in Motion</h2>
+            <p className="mb-8 text-sm uppercase tracking-[0.16em] text-neutral-400">
+              2025 / Graduation Project / Housing
+            </p>
+
+            <div className="mb-8 grid gap-4 md:grid-cols-2">
+              <div className="aspect-[4/3] border border-neutral-200 bg-neutral-50" />
+              <div className="aspect-[4/3] border border-neutral-200 bg-neutral-50" />
+            </div>
+
+            <div className="grid gap-10 md:grid-cols-12">
+              <div className="md:col-span-8">
+                <p className="text-[15px] leading-8 text-neutral-700">
+                  This page would present the project with a calm sequence of
+                  images and text: overview image, analytical drawings,
+                  architectural drawings, model photographs, and a short concept
+                  statement. The layout is intended to feel close to a printed
+                  portfolio spread.
+                </p>
+              </div>
+              <div className="md:col-span-4">
+                <div className="space-y-2 text-sm text-neutral-500">
+                  <p>Role — Individual work</p>
+                  <p>Media — Drawings / Model / Text</p>
+                  <p>Language — JP / EN</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="mb-24 grid gap-10 border-t border-neutral-200 pt-8 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <h2 className="text-xl md:text-2xl">About</h2>
+          </div>
+          <div className="md:col-span-8">
+            <p className="max-w-3xl text-[15px] leading-8 text-neutral-700">
+              Architect and designer based in Tokyo. This website focuses on
+              architectural projects developed through drawing, analysis, and
+              spatial proposals. The structure is intentionally simple so that
+              the work itself remains central.
+            </p>
+          </div>
+        </section>
+
+        <section id="cv" className="mb-24 grid gap-10 border-t border-neutral-200 pt-8 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <h2 className="text-xl md:text-2xl">CV</h2>
+          </div>
+          <div className="md:col-span-8 space-y-4 text-[15px] leading-7 text-neutral-700">
+            {cvItems.map((item) => (
+              <p key={item} className="border-b border-neutral-100 pb-3">
+                {item}
+              </p>
+            ))}
+          </div>
+        </section>
+
+        <section id="news" className="mb-24 grid gap-10 border-t border-neutral-200 pt-8 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <h2 className="text-xl md:text-2xl">News / Activity</h2>
+          </div>
+          <div className="md:col-span-8 space-y-4 text-[15px] leading-7 text-neutral-700">
+            {newsItems.map((item) => (
+              <p key={item} className="border-b border-neutral-100 pb-3">
+                {item}
+              </p>
+            ))}
+          </div>
+        </section>
+
+        <section id="contact" className="mb-16 grid gap-10 border-t border-neutral-200 pt-8 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <h2 className="text-xl md:text-2xl">Contact</h2>
+          </div>
+          <div className="md:col-span-8">
+            <div className="space-y-3 text-[15px] text-neutral-700">
+              <p>
+                Email — <span className="underline underline-offset-4">yourmail@example.com</span>
+              </p>
+              <p>
+                Instagram — <span className="underline underline-offset-4">@youraccount</span>
+              </p>
+              <p>
+                Behance — <span className="underline underline-offset-4">behance.net/yourname</span>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <footer className="border-t border-neutral-200 pt-6 text-xs uppercase tracking-[0.18em] text-neutral-400">
+          Risei On Portfolio Template
+        </footer>
+      </div>
+    </div>
+  );
+}
